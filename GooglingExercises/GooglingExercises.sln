@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GooglingExercisesPt1", "Goo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GooglingExercisesPt2", "GooglingExercisesPt2\GooglingExercisesPt2.csproj", "{F7176C0B-1F29-4713-A667-8179F6F023CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GooglingExercisesP3", "GooglingExercisesP3\GooglingExercisesP3.csproj", "{52C394A7-F3D4-40C4-8795-585A1A39304D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GooglingExercisesPt3", "GooglingExercisesP3\GooglingExercisesPt3.csproj", "{52C394A7-F3D4-40C4-8795-585A1A39304D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
