@@ -6,6 +6,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Linq.Expressions;
 using System.Reflection;
 
 namespace GooglingExercisesP3
@@ -19,7 +20,8 @@ namespace GooglingExercisesP3
 
         public static Calculator CreateCalculatorUsingReflection()
         {
-            Calculator calc = (Source)Activator.CreateInstance(typeof(Source))!;
+            ConstructorInfo Constructor = typeof(Calculator).GetConstructor(Type.EmptyTypes)!;
+            Calculator calc = Constructor.Invoke(new Object[] { });
             return calc;
         }
 
