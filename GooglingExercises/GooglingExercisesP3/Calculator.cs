@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GooglingExercisesP3
+namespace GooglingExercisesPt3
 {
     public class Calculator
     {

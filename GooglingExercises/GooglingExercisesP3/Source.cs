@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace GooglingExercisesP3
+namespace GooglingExercisesPt3
 {
     public class Source
     {
@@ -22,6 +22,18 @@ namespace GooglingExercisesP3
         {
             ConstructorInfo Constructor = typeof(Calculator).GetConstructor(Type.EmptyTypes)!;
             Calculator calc = Constructor.Invoke(new Object[] { });
+            return calc;
+        }
+
+        public static Calculator CreateCalculatorUsingReflection2()
+        {
+            Calculator calc = typeof(Calculator).Assembly.CreateInstance("what goes here") as Calculator;
+
+            if(calc == null)
+            {
+                throw new NullReferenceException("calc is null!");
+            }
+
             return calc;
         }
 

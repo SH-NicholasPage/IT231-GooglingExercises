@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace GooglingExercisesP3
+namespace GooglingExercisesPt3
 {
     class Program
     {
@@ -22,7 +22,13 @@ namespace GooglingExercisesP3
                 correct = false;
             }
 
-            if(Source.GetNumberOfPropertiesInCalculator() != 4)
+            if (Source.CreateCalculatorUsingReflection2().GetType() != typeof(Calculator))
+            {
+                Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Calculator)).Select(x => x.Name).Skip(1).FirstOrDefault() + "() returned incorrect result.");
+                correct = false;
+            }
+
+            if (Source.GetNumberOfPropertiesInCalculator() != 4)
             {
                 Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Int32)).Select(x => x.Name).FirstOrDefault() + "() returned incorrect result.");
                 correct = false;
