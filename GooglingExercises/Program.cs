@@ -8,7 +8,7 @@ namespace GooglingExercisesPt1
     {
         static void Main()
         {
-            Dictionary<String, Int32> generatedDictionary = new Dictionary<String, Int32>();
+            Dictionary<String, Int32> generatedDictionary = [];
 
             for(int i = 0; i < 10; i++)
             {
