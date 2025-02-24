@@ -65,11 +65,13 @@ public class Source
     }
 
     /// <summary>
-    /// Retrieves the values of specific properties from a Calculator object.
-    /// Do not assume the object is an instance of the Calculator class.
+    /// Attempts to retrieve specific property values from an object.
+    /// If the object is an instance of Calculator, it extracts the values of
+    /// 'number', 'pi', 'tau', and 'e' properties. If the object is not a Calculator,
+    /// it should return default values.
     /// </summary>
-    /// <param name="obj">An instance of the Calculator class.</param>
-    /// <returns>A tuple containing values of number, pi, tau, and e properties.</returns>
+    /// <param name="obj">An instance of any object, expected to be Calculator.</param>
+    /// <returns>A tuple containing values of number, pi, tau, and e properties, if applicable.</returns>
     public static (double number, double pi, double tau, double e) GetCalculatorPropertyValues(Object obj)
     {
         return (default, default, default, default);
