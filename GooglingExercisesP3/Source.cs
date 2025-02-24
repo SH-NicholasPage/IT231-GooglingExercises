@@ -66,7 +66,7 @@ public class Source
 
     /// <summary>
     /// Retrieves the values of specific properties from a Calculator object.
-    /// Assumes the object is an instance of the Calculator class.
+    /// Do not assume the object is an instance of the Calculator class.
     /// </summary>
     /// <param name="obj">An instance of the Calculator class.</param>
     /// <returns>A tuple containing values of number, pi, tau, and e properties.</returns>

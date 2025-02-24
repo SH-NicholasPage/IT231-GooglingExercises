@@ -10,27 +10,64 @@ namespace GooglingExercisesPt3
         {
             bool correct = true;
 
-            if(Source.GetCalculatorType() != typeof(Calculator))
+            try
             {
-                Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Type)).Select(x => x.Name).FirstOrDefault() + "() returned incorrect result.");
+                if (Source.GetCalculatorType() != typeof(Calculator))
+                {
+                    Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Type)).Select(x => x.Name).FirstOrDefault() + "() returned incorrect result.");
+                    correct = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Type)).Select(x => x.Name).FirstOrDefault() + "() threw an exception. See next line for details.");
+                Console.WriteLine(ex.Message);
+                correct = false;
+            }
+            
+            try
+            {
+                if (Source.CreateCalculatorUsingReflection().GetType() != typeof(Calculator))
+                {
+                    Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Calculator)).Select(x => x.Name).FirstOrDefault() + "() returned incorrect result.");
+                    correct = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Calculator)).Select(x => x.Name).FirstOrDefault() + "() threw an exception. See next line for details.");
+                Console.WriteLine(ex.Message);
+                correct = false;
+            }
+            
+
+            try
+            {
+                if (Source.CreateCalculatorUsingReflection2().GetType() != typeof(Calculator))
+                {
+                    Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Calculator)).Select(x => x.Name).Skip(1).FirstOrDefault() + "() returned incorrect result.");
+                    correct = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Calculator)).Select(x => x.Name).Skip(1).FirstOrDefault() + "() threw an exception. See next line for details.");
+                Console.WriteLine(ex.Message);
                 correct = false;
             }
 
-            if(Source.CreateCalculatorUsingReflection().GetType() != typeof(Calculator))
+            try
             {
-                Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Calculator)).Select(x => x.Name).FirstOrDefault() + "() returned incorrect result.");
-                correct = false;
+                if (Source.GetNumberOfPropertiesInCalculator() != 4)
+                {
+                    Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Int32)).Select(x => x.Name).FirstOrDefault() + "() returned incorrect result.");
+                    correct = false;
+                }
             }
-
-            if (Source.CreateCalculatorUsingReflection2().GetType() != typeof(Calculator))
+            catch (Exception ex)
             {
-                Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Calculator)).Select(x => x.Name).Skip(1).FirstOrDefault() + "() returned incorrect result.");
-                correct = false;
-            }
-
-            if (Source.GetNumberOfPropertiesInCalculator() != 4)
-            {
-                Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Int32)).Select(x => x.Name).FirstOrDefault() + "() returned incorrect result.");
+                Console.WriteLine(typeof(Source).GetMethods().Where(x => x.ReturnType == typeof(Int32)).Select(x => x.Name).FirstOrDefault() + "() threw an exception. See next line for details.");
+                Console.WriteLine(ex.Message);
                 correct = false;
             }
 
